@@ -1,0 +1,111 @@
+ 
+
+Technical References 
+
+ 
+
+https://medium.com/better-programming/how-i-built-and-deployed-my-first-web-application-with-django-in-5-weeks-e9728480a8dd 
+
+Django official website - https://docs.djangoproject.com/en/2.2/intro/ 
+
+Making a To-Do App with Django - https://www.youtube.com/watch?v=ovql0Ui3n_I 
+
+10 popular websites built using Django - https://djangostars.com/blog/10-popular-sites-made-on-django/ 
+
+ 
+
+ 
+
+Djanco CN 
+
+ 
+
+Creating a Virtual Environment using PipEnv 
+
+ 
+
+Commands: 
+
+pipenv –three (creates a virtual environment using python 3 version installed on your machine) 
+
+pipenv –rm (removes installed pipenv) 
+
+pipenv check (checks whether your machine meets the requirements for using pipenv) 
+
+Pipenv shell – starts the virtual environment 
+
+Pipenv install django – installs django in the pipenv shell 
+
+“django-admin startproject django_blog .” - this command creates a new django project in the virtual environment.  Note, the “.” at the end of the command is required in order to create the project inside the current folder 
+
+python manage.py runserver – used to start the development server.  You can also specify the port you want the server to run on.  By default it is port 8000 I.e. http://localhost:8000/, however you can also specify a port by typing the port number e.g. python manage.py runserver 8080 
+
+Control-C – use to quit server 
+
+python manage.py migrate - apply the migrations for app(s): admin, auth, contenttypes, sessions 
+
+Python manage.py startapp blog – this command creates and starts an app called “blog” 
+
+Python manage.py runserver		 
+
+http://localhost:8000/ - Django web app location on local host, this is the default location when the server is started without specifying a port 
+
+ 
+
+ 
+
+Error messages 
+
+404 – Page not found 
+
+ModuleNotFoundError: No module named 'blog.urls' 
+
+Value Error -  
+
+If you have forgotten to start the virtual environment using “pipenv shell” then you may see the following error: 
+
+except ImportError as exc: 
+
+raise ImportError( 
+
+"Couldn't import Django. Are you sure it's installed and " 
+
+"available on your PYTHONPATH environment variable? Did you " 
+
+"forget to activate a virtual environment?" 
+
+File "manage.py", line 17 
+
+    ) from exc 
+
+         ^ 
+
+SyntaxError: invalid syntax 
+
+NameError: name 'views' is not defined 
+
+AttributeError: module 'blog.views' has no attribute 'index' 
+
+ValueError at /blog/ 
+
+The view blog.views.index didn't return an HttpResponse object. It returned None instead. 
+
+ 
+
+ 
+
+References 
+
+ 
+
+Pipenv: Python Dev Workflow for Humans - https://pipenv.pypa.io/en/latest/ 
+
+https://medium.com/better-programming/how-i-built-and-deployed-my-first-web-application-with-django-in-5-weeks-e9728480a8dd 
+
+https://medium.com/better-programming/how-i-built-and-deployed-my-first-web-application-with-django-in-5-weeks-e9728480a8dd 
+
+Django official website - https://docs.djangoproject.com/en/2.2/intro/ 
+
+Making a To-Do App with Django - https://www.youtube.com/watch?v=ovql0Ui3n_I 
+
+10 popular websites built using Django - https://djangostars.com/blog/10-popular-sites-made-on-django/ 
