@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from news import views
 
 
 urlpatterns = [
-    path('', views.news),
+    path('', views.index),
 ]

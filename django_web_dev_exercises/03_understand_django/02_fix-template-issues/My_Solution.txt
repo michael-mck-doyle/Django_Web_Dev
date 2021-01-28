@@ -1,0 +1,26 @@
+Steps
+1. start server - python manage.py runserver
+2. copy url: http://127.0.0.1:8000 and try to navigate to 'news' app in the 'hello friend' project
+- http://127.0.0.1:8000/
+3. Error encountered: "TemplateDoesNotExist at /"
+4. Solution:
+    4.1         
+
+3. Error encountered:  Page not found (404)
+4. Solution:
+    4.1 check the project settings.py file, add the 'news' app if not already there
+        - the 'news' app was not there so I added it
+    4.2 check the project urls.py file, add the url patterns for 'news' app if not already there
+        - added the include() function - from django.urls import include, path
+        - added to the url patters - path('news/', include('news.urls'))
+5. Error encountered: ....news/urls.py", line 5, in <module> - path('', views.index),
+    - NameError: name 'views' is not defined
+6. Solution:
+    6.1 check the 'news' urls.py file, import views if not already there
+    - added 'from news import views'
+7. Error encountered: ....news/urls.py", line 6, in <module> - path('', views.index),
+    - AttributeError: module 'news.views' has no attribute 'index'
+8. Solution:
+    8.1 check views.py, create funciton 'index' if not already present
+    - renamed the function in views.py from 'news' to 'index'
+9.  FIXED!  message now displays in browser
